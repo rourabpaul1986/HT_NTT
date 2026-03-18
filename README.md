@@ -32,3 +32,4 @@ For verification you need to match the value of X with ram contents.
 =log_2(256)x256/2
 =8x128
 =1024
+![pipeline of forward ntt](./fig/NTT_pipes.png)
