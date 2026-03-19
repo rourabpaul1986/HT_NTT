@@ -57,14 +57,16 @@ begin
      
     begin
     
-         if rst = '1' then
-            C_shift_buf<=(others => '0');
-            done_buf<='0';
-         elsif rising_edge(clk) then
-                if start = '1' then
-                c<=std_logic_vector(unsigned(a) * unsigned(b));
-                C_shift_buf<=std_logic_vector(unsigned(a)*unsigned(b)* to_unsigned(mu, k));
-                done_buf<='1';
+
+         if rising_edge(clk) then
+         
+                 if rst = '1' then
+                   C_shift_buf<=(others => '0');
+                   done_buf<='0';
+                elsif start = '1' then
+                  c<=std_logic_vector(unsigned(a) * unsigned(b));
+                  C_shift_buf<=std_logic_vector(unsigned(a)*unsigned(b)* to_unsigned(mu, k));
+                   done_buf<='1';
                 end if;
          end if;
      end process;       
